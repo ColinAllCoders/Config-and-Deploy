@@ -46,5 +46,29 @@ namespace Project1
         {
             this.Close();
         }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string saveStatus = "";
+            if (xmlManager.ValidateXML(txtXMLEdit.Text))
+            {
+                
+                try
+                {
+                    //Save the file
+
+                    saveStatus = "Save Successful.";
+                }
+                catch (Exception ex)
+                {
+                    saveStatus = "Error attempting to save: " + ex.Message;
+                }
+                finally
+                {
+                    MessageBox.Show(saveStatus);
+                }
+                
+            }
+        }
     }
 }
