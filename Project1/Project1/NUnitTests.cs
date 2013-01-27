@@ -10,13 +10,13 @@ namespace Project1
     [TestFixture]
     public class NUnitTests : NUnitFormTest
     {
-        
         public NUnitTests()
         {
             base.init();
             frmXMLConfigurationEditor myXMLEditor = new frmXMLConfigurationEditor();
             myXMLEditor.Show();
 
+            
             TestOpen(myXMLEditor);
 
             TestSave(myXMLEditor);
@@ -60,7 +60,8 @@ namespace Project1
 
         public void dialogHandler()
         {
-            FileDialogTester dialogTester = new FileDialogTester("Open");
+            //For some reason this FileDialogTester will work no matter what the dialog is actually named, and cannot be called off after being called once...
+            FileDialogTester dialogTester = new FileDialogTester("");
 
             dialogTester.ClickCancel();
         }
