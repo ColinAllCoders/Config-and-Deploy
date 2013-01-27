@@ -79,6 +79,7 @@
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -91,7 +92,7 @@
             // validateToolStripMenuItem
             // 
             this.validateToolStripMenuItem.Name = "validateToolStripMenuItem";
-            this.validateToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.validateToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.validateToolStripMenuItem.Text = "Validate XML";
             this.validateToolStripMenuItem.Click += new System.EventHandler(this.validateXMLToolStripMenuItem_Click);
             // 
