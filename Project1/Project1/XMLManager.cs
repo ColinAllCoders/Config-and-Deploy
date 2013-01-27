@@ -11,8 +11,12 @@ using System.IO;
 
 namespace Project1
 {
+    /// <summary>
+    /// Management of functions used to Load, Save, and Validate XML files.
+    /// </summary>
     public class XMLManager
     {
+        string defaultFileName = "";
         /// <summary>
         /// Opens file dialog to find an XML file, reads data into string.
         /// </summary>
@@ -24,14 +28,15 @@ namespace Project1
             try
             {
                 // Create the XmlDocument.
-                XmlDocument doc = new XmlDocument();
+               // XmlDocument doc = new XmlDocument();
                 //doc.LoadXml("<item><name>wrench</name></item>");
                 OpenFileDialog fileFinder = new OpenFileDialog();
                 fileFinder.Filter = "XML Files |*.xml|All Files |*.*";
                 fileFinder.FilterIndex = 1;
                 fileFinder.ShowDialog();
-                doc.Load(fileFinder.FileName);
-                StreamReader reader = new StreamReader("data.xml");
+                //doc.Load(fileFinder.FileName);
+                defaultFileName = fileFinder.FileName;
+                StreamReader reader = new StreamReader(fileFinder.FileName);
                 data = reader.ReadToEnd();
                 reader.Close();
                 status = "Load Successful";
@@ -76,6 +81,7 @@ namespace Project1
 
             if (bIsValidXML)
             {
+                bIsValidAgainstSchema = true;
                 try
                 {
                     doc.Schemas.Add(null, mySchema);
@@ -94,6 +100,20 @@ namespace Project1
             MessageBox.Show(validationStatus);
 
             return bIsValidAgainstSchema;            
+        }
+
+        public bool SaveTextToXML(string data)
+        {
+            bool bSaved = false;
+            XmlDocument doc = new XmlDocument();
+            doc.LoadXml(data);
+            SaveFileDialog fileSaver = new SaveFileDialog();
+            fileSaver.Filter = "XML Files |*.xml|All Files |*.*";
+            fileSaver.FilterIndex = 1;
+            fileSaver.ShowDialog();
+            doc.Save(fileSaver.FileName);
+
+            return bSaved;
         }
 
         /// <summary>

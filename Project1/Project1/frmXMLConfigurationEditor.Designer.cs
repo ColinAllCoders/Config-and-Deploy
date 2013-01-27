@@ -1,6 +1,6 @@
 ﻿namespace Project1
 {
-    partial class Form1
+    partial class frmXMLConfigurationEditor
     {
         /// <summary>
         /// Required designer variable.
@@ -33,9 +33,9 @@
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.txtXMLEdit = new System.Windows.Forms.TextBox();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.validateXMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.validateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.txtXMLEdit = new System.Windows.Forms.RichTextBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,7 +63,7 @@
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.openToolStripMenuItem.Text = "Open...";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
@@ -79,34 +79,31 @@
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
-            // txtXMLEdit
-            // 
-            this.txtXMLEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtXMLEdit.Location = new System.Drawing.Point(12, 27);
-            this.txtXMLEdit.Multiline = true;
-            this.txtXMLEdit.Name = "txtXMLEdit";
-            this.txtXMLEdit.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtXMLEdit.Size = new System.Drawing.Size(707, 433);
-            this.txtXMLEdit.TabIndex = 1;
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.validateXMLToolStripMenuItem});
+            this.validateToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "Edit";
             // 
-            // validateXMLToolStripMenuItem
+            // validateToolStripMenuItem
             // 
-            this.validateXMLToolStripMenuItem.Name = "validateXMLToolStripMenuItem";
-            this.validateXMLToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.validateXMLToolStripMenuItem.Text = "Validate XML";
-            this.validateXMLToolStripMenuItem.Click += new System.EventHandler(this.validateXMLToolStripMenuItem_Click);
+            this.validateToolStripMenuItem.Name = "validateToolStripMenuItem";
+            this.validateToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.validateToolStripMenuItem.Text = "Validate XML";
+            this.validateToolStripMenuItem.Click += new System.EventHandler(this.validateXMLToolStripMenuItem_Click);
             // 
-            // Form1
+            // txtXMLEdit
+            // 
+            this.txtXMLEdit.Location = new System.Drawing.Point(12, 27);
+            this.txtXMLEdit.Name = "txtXMLEdit";
+            this.txtXMLEdit.Size = new System.Drawing.Size(707, 433);
+            this.txtXMLEdit.TabIndex = 1;
+            this.txtXMLEdit.Text = "";
+            // 
+            // frmXMLConfigurationEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -115,7 +112,7 @@
             this.Controls.Add(this.txtXMLEdit);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "frmXMLConfigurationEditor";
             this.Text = "XML Editor";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -131,9 +128,9 @@
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.TextBox txtXMLEdit;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem validateXMLToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem validateToolStripMenuItem;
+        private System.Windows.Forms.RichTextBox txtXMLEdit;
 
     }
 }

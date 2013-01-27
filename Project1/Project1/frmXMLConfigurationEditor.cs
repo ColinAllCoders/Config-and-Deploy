@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace Project1
 {
-    public partial class Form1 : Form
+    public partial class frmXMLConfigurationEditor : Form
     {
         XMLManager xmlManager = new XMLManager();
-        public Form1()
+        public frmXMLConfigurationEditor()
         {
             InitializeComponent();
         }
@@ -52,11 +52,10 @@ namespace Project1
             string saveStatus = "";
             if (xmlManager.ValidateXML(txtXMLEdit.Text))
             {
-                
                 try
                 {
                     //Save the file
-
+                    xmlManager.SaveTextToXML(txtXMLEdit.Text);
                     saveStatus = "Save Successful.";
                 }
                 catch (Exception ex)
