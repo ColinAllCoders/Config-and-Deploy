@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using NUnit;
 
 
 namespace Project1
@@ -22,19 +23,6 @@ namespace Project1
         {
             string data = xmlManager.GetXMLFileData();
             txtXMLEdit.Text = data;
-
-
-            //File.OpenText("data.xml");
-            //file.
-            //// Add a price element.
-            //XmlElement newElem = doc.CreateElement("price");
-            //newElem.InnerText = "10.95";
-            //doc.DocumentElement.AppendChild(newElem);
-
-            //// Save the document to a file and auto-indent the output.
-            //XmlTextWriter writer = new XmlTextWriter("data.xml", null);
-            //writer.Formatting = Formatting.Indented;
-            //doc.Save(writer);
         }
 
         private void validateXMLToolStripMenuItem_Click(object sender, EventArgs e)
@@ -68,6 +56,13 @@ namespace Project1
                 }
                 
             }
+        }
+
+        private void runTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NUnitTests myTestFixture = new NUnitTests();
+
+                
         }
     }
 }

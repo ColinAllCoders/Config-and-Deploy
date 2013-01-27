@@ -36,6 +36,7 @@
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.validateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtXMLEdit = new System.Windows.Forms.RichTextBox();
+            this.runTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +56,7 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openToolStripMenuItem,
             this.saveToolStripMenuItem,
+            this.runTestToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
@@ -104,6 +106,13 @@
             this.txtXMLEdit.TabIndex = 1;
             this.txtXMLEdit.Text = "";
             // 
+            // runTestToolStripMenuItem
+            // 
+            this.runTestToolStripMenuItem.Name = "runTestToolStripMenuItem";
+            this.runTestToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.runTestToolStripMenuItem.Text = "Run Test";
+            this.runTestToolStripMenuItem.Click += new System.EventHandler(this.runTestToolStripMenuItem_Click);
+            // 
             // frmXMLConfigurationEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -132,6 +141,7 @@
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem validateToolStripMenuItem;
         private System.Windows.Forms.RichTextBox txtXMLEdit;
+        private System.Windows.Forms.ToolStripMenuItem runTestToolStripMenuItem;
 
     }
 }
