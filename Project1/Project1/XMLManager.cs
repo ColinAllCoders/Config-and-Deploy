@@ -16,7 +16,6 @@ namespace Project1
     /// </summary>
     public class XMLManager
     {
-        string defaultFileName = "";
         /// <summary>
         /// Opens file dialog to find an XML file, reads data into string.
         /// </summary>
@@ -28,15 +27,13 @@ namespace Project1
             try
             {
                 // Create the XmlDocument.
-               // XmlDocument doc = new XmlDocument();
-                //doc.LoadXml("<item><name>wrench</name></item>");
                 OpenFileDialog fileFinder = new OpenFileDialog();
+                //Set up filters for the dialog
                 fileFinder.Filter = "XML Files |*.xml|All Files |*.*";
                 fileFinder.FilterIndex = 1;
                 fileFinder.ShowDialog();
-                //doc.Load(fileFinder.FileName);
-                defaultFileName = fileFinder.FileName;
-                StreamReader reader = new StreamReader(fileFinder.FileName);
+
+                StreamReader reader = new StreamReader(fileFinder.FileName);    //Open the file chosen
                 data = reader.ReadToEnd();
                 reader.Close();
                 status = "Load Successful";
@@ -53,11 +50,10 @@ namespace Project1
             return data;
         }
 
-
-
-        string mySchema = "myXSD.xsd";
-        string validationStatus = "";
-        bool bIsValidAgainstSchema = true;
+        // Using these in global because my ValidationEventHandler cannot receive additional parameters...
+        private string mySchema = "myXSD.xsd";  //Schema File Name
+        private string validationStatus = "";   //Status message to be printed in message box
+        private bool bIsValidAgainstSchema = true;
 
         /// <summary>
         /// Check to see if the text given is of validate XML format, as well as follows the XML Schema loaded to XMLManager
@@ -70,7 +66,7 @@ namespace Project1
 
             try
             {
-                doc.LoadXml(xmlData);
+                doc.LoadXml(xmlData);   // Will throw exception if invalid XML format
                 validationStatus = "Data is of valid XML format.";
             }
             catch (Exception ex)
@@ -81,11 +77,11 @@ namespace Project1
 
             if (bIsValidXML)
             {
-                bIsValidAgainstSchema = true;
+                bIsValidAgainstSchema = true;   // Assume true...
                 try
                 {
                     doc.Schemas.Add(null, mySchema);
-                    ValidationEventHandler eventHandler = new ValidationEventHandler(ValidationEventHandler);
+                    ValidationEventHandler eventHandler = new ValidationEventHandler(ValidationEventHandler);   //Set up validation event handle
 
                     doc.Validate(eventHandler);
                 }
@@ -123,6 +119,7 @@ namespace Project1
         /// <param name="e"></param>
         private void ValidationEventHandler(object sender, ValidationEventArgs e)
         {
+            //If we are inside this function at all, we know the XML is invalid against the schema provided.
             bIsValidAgainstSchema = false;
             switch (e.Severity)
             {

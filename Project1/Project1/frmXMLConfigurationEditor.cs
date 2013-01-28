@@ -60,9 +60,7 @@ namespace Project1
 
         private void runTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            NUnitTests myTestFixture = new NUnitTests();
-
-                
+            NUnitTests myTestFixture = new NUnitTests();                
         }
     }
 }

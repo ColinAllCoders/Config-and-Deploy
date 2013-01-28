@@ -15,7 +15,6 @@ namespace Project1
             base.init();
             frmXMLConfigurationEditor myXMLEditor = new frmXMLConfigurationEditor();
             myXMLEditor.Show();
-
             
             TestOpen(myXMLEditor);
 
